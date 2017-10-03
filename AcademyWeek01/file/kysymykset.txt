@@ -1,0 +1,22 @@
+Kuka on Academic Workin toimitusjohtaja?,Tommi Teräsvirta,Stefan Heinrichs,Jukka Pulkkinen,1
+Kuka on Suomen ensimmainen presidentti?,Ståhlberg,Svinhufvud,Relander,0
+Mita tarkoittaa %d?,String,Liukuluku,Kokonaisluku,2
+Kannattaako tyhjaa catch -haaraa koodata?,Tottakai,Ilman muuta,Ei,2
+Paljonko on 3+4*2?,14,11,12,1
+Mika oli Koiviston presidenttikausi?,1972-1984,1982-1994,1986-1994,1
+Kuka nayttelee MacGyveria?,Richard Dean Anderson,Chuck Norris,Dana Elcar,0
+Mita tapahtuu 15.joulukuuta?,Suomen itsenäisyyspäivä,20 valmista IT-konsulttia valmistuu,Presidentin vaalit,1
+Mika maa voitti Euroviisut vuonna 2014?,Itavalta,Ruotsi,Ukraina,0
+Missa seuraavista tietorakenteideista hyodynnetaan FIFO -periaatetta?,Pino,Jono,Keko,1
+Mikä on Javassa varattu avainsana?,Interface,int,True,0
+Milloin Lansimetro valmistuu?,Lokakuussa,Marraskuussa,Ei se valmistu,0
+Mita tieto lisaa?,Mammuttimaisia infra-jarjestelmia,Tyottomia kehittajia,tuskaa,2
+String vai StringBuilder?,String,StringBuilder,Mikä on String?,1
+Mika IDE?,IntelliJ Idea,NetBeans,Mika tuntuu parhaimmalta!,2
+Onko Pluto planeetta?,Kylla!,Ei!,Talla on jotain tekemista sarjisten kanssa...,1
+Ensimmainen koodari?,Ada Lovelace,James Gosling,Henry Ford,0
+Poison of choice?,Coke,Pepsi,ES,0
+Kuka oli Pinocchion isa?,Gepetto,Merlin,Giuseppe,0
+Harry Potterin toinen nimi?,Julius,Jake,James,1
+Christopher Paolinin kirjoittama kirjasarja?,Twilight,Terasrotta,Eragon,2
+Mitka elaimet ovat yksi todennakoinen perusta lohikaarmeen legendalle?,Axolotl,dinosaurukset,Krokotiili,0
