@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+// kommentti git-testiin
+
 public class Puhelinluettelo {
 
     private static String menu = "Valitse seuraavista:" 
@@ -23,7 +25,7 @@ public class Puhelinluettelo {
             + "5) Muokkaa " 
             + "6) Etsi" 
             + "\n"
-            + "0) Tallenna ja Lopeta"
+            + "0) Tallenna / Lopeta"
             + "\n";
 
     static private List<Kontakti> luettelo;
