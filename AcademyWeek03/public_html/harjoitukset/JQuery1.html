@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>JQuery 1</title>
+    
+</head>
+<body>
+    
+    <div id="content">
+        <!-- -->
+        <h1>First JQuery exercises, colours and selectors</h1>
+        <p></p>
+    
+        <ul>
+            <li>Alkio 1</li>
+            <li>Alkio 2</li>
+            <li>Alkio 3</li>
+        </ul>
+
+        <!-- (div>(p*3>lorem)+(ul>li*8>lorem2))+(p>lorem)+(ul>li*4>lorem2)+p.foo*5>lorem -->
+
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt itaque numquam possimus quis,
+                repudiandae voluptas? Alias eaque error fugiat quas recusandae totam vel. Assumenda illo quaerat qui
+                tempora vero!</p>
+            <p>Ad beatae consectetur, dolorem enim libero nesciunt nihil officia quae, quaerat reiciendis tenetur
+                veritatis! Adipisci cumque error ex excepturi facere harum id illum in incidunt laboriosam nihil
+                pariatur quasi, tempora.</p>
+            <p>Ad assumenda autem consequatur doloremque eius in reprehenderit repudiandae similique voluptate. Illo
+                omnis quibusdam ratione repellat? Dignissimos, dolor dolore, et eum iste magni nisi perspiciatis quas
+                quasi quidem ratione repellendus.</p>
+            <ol>
+                <li>Lorem ipsum.</li>
+                <li>Expedita, nam!</li>
+                <li>Atque, perferendis!</li>
+                <li>Optio, suscipit.</li>
+                <li>Laudantium, veritatis.</li>
+                <li>Ratione, temporibus.</li>
+                <li>Laboriosam, praesentium.</li>
+                <li>Maxime, quibusdam.</li>
+            </ol>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at deserunt dolorum et fuga fugiat iure
+            laudantium quo reiciendis velit. Aspernatur atque cupiditate dignissimos eveniet in magni quae repudiandae
+            rerum.</p>
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Deleniti, exercitationem?</li>
+            <li>Obcaecati, tenetur?</li>
+            <li>Illum, perferendis!</li>
+        </ul>
+        <p class="foo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque aut blanditiis delectus
+            deleniti, doloremque dolores et facere fugit incidunt ipsa itaque nemo odio quisquam rerum soluta suscipit
+            voluptatum! Distinctio!</p>
+        <p class="foo">Ad consequuntur dolore eum possimus quam totam vitae. Accusamus ad, animi corporis culpa
+            distinctio hic labore magni modi nulla qui recusandae rem saepe, vitae? Cumque ex expedita harum illum
+            pariatur.</p>
+        <p class="foo">Aspernatur beatae, delectus dolorum ea esse explicabo fugit illo mollitia optio provident quod
+            repudiandae sit tempore temporibus velit. Corporis molestiae, necessitatibus. Amet assumenda consectetur est
+            eveniet magni quam, rem rerum.</p>
+        <p class="foo">Beatae consequatur debitis dolores earum officiis quia vitae! Amet cumque doloremque esse est
+            nobis odio odit tenetur totam? At blanditiis ducimus fugiat in nesciunt non odio provident recusandae saepe
+            vero!</p>
+        <p class="foo">Asperiores autem beatae blanditiis commodi consequuntur delectus dolore doloribus esse et fuga
+            hic ipsum minus molestias neque, possimus quisquam repellendus vero. Commodi, fugiat ipsa iusto natus neque
+            praesentium quia rem.</p>
+
+    </div>
+    
+    
+    <!-- nav HTML / CSS -->
+    <script src="js/nav.js"></script>  
+    <!-- local JQ for debugging --
+    <script src="js/jquery-1.12.4.js"></script> -->
+    <!-- CDN JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    
+    
+    <!-- JQuery scripts -->
+    <script>
+        
+        $(function(){
+            $("li").css("color", "#00c");            
+            $("div > ol > li").css("color", "#0c0");
+            $("div p").eq(2).css("color", "#c00");
+            $(".foo").filter(":first").css("color", "#cc0")
+                .end()
+                .eq(1).css("color", "#0cc");
+            $("div ol li").not(":even").css("color", "#c0c");
+            $("div").next("p").css("background-color", "black").css("color", "white");
+            // $("div").children("p").css("background-color", "white").css("color", "black");
+        })
+        
+    </script>
+    
+</body>
+</html>

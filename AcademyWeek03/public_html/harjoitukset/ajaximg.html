@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>AJAX Images</title>
+        
+</head>
+<body>
+    
+    <div id="content">
+        <!-- -->
+        <h1>Displaying Flickr Images w/ AJAX</h1>
+        <p></p>
+
+        <form action="javascript:;" onsubmit="search()">
+            <fieldset>
+                <legend>Search term for Flickr</legend>
+                <input type="text" id="searchtag" style="display: inline" autofocus>
+                <input type="submit" id="search" value="Search" style="display: inline; margin-left: 4px;">
+            </fieldset>
+        </form>
+        
+        <br>
+        
+        <div id="images"></div>
+        
+    </div>
+    
+    
+    <!-- nav HTML / CSS -->
+    <script src="js/nav.js"></script>  
+    <!-- local JQuery for debugging --
+    <script src="js/jquery-1.12.4.js"></script> -->
+    <!-- CDN JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+    <!-- JQuery scripts -->
+    <script src="js/ajaximg.js"></script>
+    
+</body>
+</html>

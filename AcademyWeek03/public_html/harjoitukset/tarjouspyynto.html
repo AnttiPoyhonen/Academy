@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+    <link rel="stylesheet" href="css/nav.css">
+    
+    <style>
+        #descr {
+            width:80%
+        }
+    </style>
+    
+</head>
+<body>
+        
+    <div id="content">
+    <!-- -->
+    <h1>Tender request</h1>
+    
+    <form 
+          method="post" 
+          action="http://localhost:3000/formhandler">
+    
+        <p>
+        <label for="name">Name:</label>
+        <input name="name" type="text" placeholder="Firstname Surname">
+        </p>
+        
+        <p>
+        <label for="custType">Customer type:</label><br>
+        <input type="radio" name="custType" value="company" checked>Company<br>
+        <input type="radio" name="custType" value="private">Private<br>
+        </p>
+        
+        <p>
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" size="20" placeholder="a@a.com">
+        </p>
+        
+        <p>
+        <label for="urgency">Work urgency:</label>
+        <select name="urgency">
+                <option value="asap">As soon as possible</option>
+                <option value="week">in a week</option>
+                <option value="2weeks" selected>in two weeks</option>
+                <option value="month">in a month</option>
+                <option value="monthplus">in more than a month</option>
+        </select>
+        </p>
+        
+        <p>
+        <label for="descr">Needs description:</label><br>
+        <textarea id="descr" name="descr" rows="6" placeholder="Add description of the work required"></textarea>
+        </p>
+        
+        <p>
+        <label for="attachment">Possible attachment:</label><br>
+        <input type="file">
+        </p>
+    
+        <p>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset form">
+        </p>
+        
+    </form>
+        
+    </div>
+    
+    <script src="js/nav.js"></script>
+    
+</body>
+</html>

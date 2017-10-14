@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>JavaScript -harjoitukset</title>
+    
+    <link rel="stylesheet" href="css/nav.css">
+    
+</head>
+<body>
+    
+    <div id="content">
+    
+    <!-- -->
+    <h1>Heading</h1>
+    <p>...and the following paragraph.</p>
+    <br>
+    
+    <div id="pvm"><p>pvm</p></div>    
+    <div id="1"><p>One</p></div>    
+    <div id="2"><p>Two</p></div>
+    <br>
+    
+    <!-- calculator form -->
+    <form>        
+        <fieldset>
+        
+            <legend><h3>Calculator</h3></legend>
+            
+            <label for="luku1">Number one (a): </label>
+            <input type="number" id="luku1">
+            <br>
+            
+            <label for="luku2">Number two (b): </label>
+            <input type="number" id="luku2">
+            <br>
+            
+            <br>
+            <label for="tulos">Calculation result: </label>
+            <output id="tulos" for="luku1 luku2"></output>
+            <br><br>
+            
+            What do you want to calculate?<br>
+            <input type="button" onclick="add();" value="Sum (a + b)"><br>
+            <input type="button" onclick="subtract();" value="Difference (a - b)"><br>
+            <input type="button" onclick="times();" value="Times (a * b)"><br>
+            <input type="button" onclick="divide();" value="Divided (a / b)"><br>
+            <input type="button" onclick="topowerof();" value="To the power of (a ^ b)"><br>
+        
+        </fieldset>        
+    </form>
+        
+    <br><br>
+        
+    
+        <h2 id="first" class="eka"><b>Foldable First header</b></h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu commodo turpis. Pellentesque tincidunt leo massa, eu sagittis urna fringilla non. Morbi vel risus a purus sollicitudin maximus et a urna. Phasellus sed lorem non purus vestibulum mollis. Cras luctus enim quis sodales aliquet. Phasellus at ultricies velit, eu pretium odio. Ut scelerisque dapibus pellentesque. Sed non orci eu diam viverra tempor nec at ipsum. Etiam consequat, nulla a fringilla facilisis, dolor sem pharetra eros, a pulvinar dui elit sit amet sem. Maecenas gravida sapien sed neque fringilla pretium. Etiam tempus tortor id sagittis mattis. Cras mi purus, vulputate eget feugiat at, tincidunt ultrices ante. Vestibulum tempor eleifend nunc ut vehicula. Vivamus porttitor nibh sit amet orci volutpat aliquet. Duis convallis in metus ac sagittis.
+        </p>
+
+        <h2 id="second"><b>Foldable Second</b></h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu commodo turpis. Pellentesque tincidunt leo massa, eu sagittis urna fringilla non. Morbi vel risus a purus sollicitudin maximus et a urna. Phasellus sed lorem non purus vestibulum mollis. Cras luctus enim quis sodales aliquet. Phasellus at ultricies velit, eu pretium odio. Ut scelerisque dapibus pellentesque. Sed non orci eu diam viverra tempor nec at ipsum. Etiam consequat, nulla a fringilla facilisis, dolor sem pharetra eros, a pulvinar dui elit sit amet sem. Maecenas gravida sapien sed neque fringilla pretium. Etiam tempus tortor id sagittis mattis. Cras mi purus, vulputate eget feugiat at, tincidunt ultrices ante. Vestibulum tempor eleifend nunc ut vehicula. Vivamus porttitor nibh sit amet orci volutpat aliquet. Duis convallis in metus ac sagittis.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu commodo turpis. Pellentesque tincidunt leo massa, eu sagittis urna fringilla non. Morbi vel risus a purus sollicitudin maximus et a urna. Phasellus sed lorem non purus vestibulum mollis. Cras luctus enim quis sodales aliquet. Phasellus at ultricies velit, eu pretium odio. Ut scelerisque dapibus pellentesque. Sed non orci eu diam viverra tempor nec at ipsum. Etiam consequat, nulla a fringilla facilisis, dolor sem pharetra eros, a pulvinar dui elit sit amet sem. Maecenas gravida sapien sed neque fringilla pretium. Etiam tempus tortor id sagittis mattis. Cras mi purus, vulputate eget feugiat at, tincidunt ultrices ante. Vestibulum tempor eleifend nunc ut vehicula. Vivamus porttitor nibh sit amet orci volutpat aliquet. Duis convallis in metus ac sagittis.
+        </p>
+
+        <h2 id="third" onclick="piilota();"><b>Foldable Third</b></h2>
+        <p id="piilotettava">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu commodo turpis. Pellentesque tincidunt leo massa, eu sagittis urna fringilla non. Morbi vel risus a purus sollicitudin maximus et a urna. Phasellus sed lorem non purus vestibulum mollis. Cras luctus enim quis sodales aliquet. Phasellus at ultricies velit, eu pretium odio. Ut scelerisque dapibus pellentesque. Sed non orci eu diam viverra tempor nec at ipsum. Etiam consequat, nulla a fringilla facilisis, dolor sem pharetra eros, a pulvinar dui elit sit amet sem. Maecenas gravida sapien sed neque fringilla pretium. Etiam tempus tortor id sagittis mattis. Cras mi purus, vulputate eget feugiat at, tincidunt ultrices ante. Vestibulum tempor eleifend nunc ut vehicula. Vivamus porttitor nibh sit amet orci volutpat aliquet. Duis convallis in metus ac sagittis.
+        </p>
+        
+    </div>
+    
+    <!-- manual script on the page w/out .js -->
+    <script>        
+        var div1 = document.getElementById("1");
+        div1.innerHTML = "<p>" + "<br>" + "<p>" + "Hello world div YKSI";    
+    </script>
+    
+    <!-- to include the .js code(s) -->
+    <script src="js/harjoitukset.js"></script>
+    <script src="js/laskin.js"></script>
+    
+    <script src="js/nav.js"></script>
+    
+</body>
+</html>

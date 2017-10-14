@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>JavaScript -harjoitukset</title>
+    
+    <link rel="stylesheet" href="css/nav.css">
+        
+</head>
+<body>
+    
+    <div id="content">
+    
+    <!-- -->
+    <h1>Reroute page</h1>
+    <p style="font-size: 130%">...if you don't do anything for a while...</p>
+    <p style="font-size: 130%">...you'll end up at the <a href="index.html">homepage</a>.</p>
+    <br>
+    <br>
+        
+    <div id="timerwarning" style="display: none;">
+        <h2 style="color:darkred; font-weight: bold">Timer warning! 10 seconds before rerouting...</h2>    
+    </div>
+        
+    </div>
+    
+    <script>
+        
+        onload = function() {
+            
+            var varoitusajastin;
+            var siirtoajastin;
+            
+            function nollaaAjastimet() {
+
+                clearTimeout(siirto);
+                clearTimeout(aikavaroitus);
+                document.getElementById("timerwarning").style.display = "none";
+
+                varoitusajastin = setTimeout(aikavaroitus, 2000);
+            }
+            
+            // warning before reroute
+            function aikavaroitus() {
+                document.getElementById("timerwarning").style.display = "block";
+                siirtoajastin = setTimeout(siirto, 10000)
+            }
+            
+            // reroute to index.html
+            function siirto() {
+                location.href = "index.html";
+            }
+
+            nollaaAjastimet();
+
+            onmousemove = nollaaAjastimet;
+            onclick = nollaaAjastimet;
+            onkeypress = nollaaAjastimet;
+        }
+        
+    </script>
+    
+    <script src="js/nav.js"></script>
+    
+    <!-- to include the .js code(s) --
+    <script src="js/reroute.js"></script>
+    -->
+    
+</body>
+</html>

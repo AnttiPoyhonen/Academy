@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>JQuery 2</title>
+    
+    <style>
+        .hidden {display: none;}
+    </style>
+    
+</head>
+<body>
+    
+    <div id="content">
+        <!-- -->
+        <h1>Second JQuery exercises, hiding etc</h1>
+        <p></p>
+
+
+        <h2>First header</h2>
+
+        <p>FIRST Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt itaque numquam possimus quis,
+            repudiandae voluptas? Alias eaque error fugiat quas recusandae totam vel. Assumenda illo quaerat qui
+            tempora vero!</p>
+
+        <p>SECOND Ad beatae consectetur, dolorem enim libero nesciunt nihil officia quae, quaerat reiciendis tenetur
+            veritatis! Adipisci cumque error ex excepturi facere harum id illum in incidunt laboriosam nihil
+            pariatur quasi, tempora.</p>
+
+        <p>THIRD Ad assumenda autem consequatur doloremque eius in reprehenderit repudiandae similique voluptate. Illo
+            omnis quibusdam ratione repellat? Dignissimos, dolor dolore, et eum iste magni nisi perspiciatis quas
+            quasi quidem ratione repellendus.</p>
+
+
+        <h3>A list header</h3>
+
+        <ol>
+            <li>Lorem ipsum.</li>
+            <li>Expedita, nam!</li>
+            <li>Atque, perferendis!</li>
+            <li>Optio, suscipit.</li>
+            <li>Laudantium, veritatis.</li>
+            <li>Ratione, temporibus.</li>
+            <li>Laboriosam, praesentium.</li>
+            <li>Maxime, quibusdam.</li>
+        </ol>
+
+        
+        <h2>Second header</h2>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at deserunt dolorum et fuga fugiat iure
+            laudantium quo reiciendis velit. Aspernatur atque cupiditate dignissimos eveniet in magni quae repudiandae
+            rerum.</p>
+        
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Deleniti, exercitationem?</li>
+            <li>Obcaecati, tenetur?</li>
+            <li>Illum, perferendis!</li>
+        </ul>
+        
+        <p class="foo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque aut blanditiis delectus
+            deleniti, doloremque dolores et facere fugit incidunt ipsa itaque nemo odio quisquam rerum soluta suscipit
+            voluptatum! Distinctio!</p>
+        
+        <p class="foo">Ad consequuntur dolore eum possimus quam totam vitae. Accusamus ad, animi corporis culpa
+            distinctio hic labore magni modi nulla qui recusandae rem saepe, vitae? Cumque ex expedita harum illum
+            pariatur.</p>
+        
+        <p class="foo">Aspernatur beatae, delectus dolorum ea esse explicabo fugit illo mollitia optio provident quod
+            repudiandae sit tempore temporibus velit. Corporis molestiae, necessitatibus. Amet assumenda consectetur est
+            eveniet magni quam, rem rerum.</p>
+        
+        <p class="foo">Beatae consequatur debitis dolores earum officiis quia vitae! Amet cumque doloremque esse est
+            nobis odio odit tenetur totam? At blanditiis ducimus fugiat in nesciunt non odio provident recusandae saepe
+            vero!</p>
+        
+        <p class="foo">Asperiores autem beatae blanditiis commodi consequuntur delectus dolore doloribus esse et fuga
+            hic ipsum minus molestias neque, possimus quisquam repellendus vero. Commodi, fugiat ipsa iusto natus neque
+            praesentium quia rem.</p>
+        
+        
+        <h2>Third header</h2>
+
+        <p>FIRST Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt incidunt itaque numquam possimus quis,
+            repudiandae voluptas? Alias eaque error fugiat quas recusandae totam vel. Assumenda illo quaerat qui
+            tempora vero!</p>
+
+        <p>SECOND Ad beatae consectetur, dolorem enim libero nesciunt nihil officia quae, quaerat reiciendis tenetur
+            veritatis! Adipisci cumque error ex excepturi facere harum id illum in incidunt laboriosam nihil
+            pariatur quasi, tempora.</p>
+
+        <p>THIRD Ad assumenda autem consequatur doloremque eius in reprehenderit repudiandae similique voluptate. Illo
+            omnis quibusdam ratione repellat? Dignissimos, dolor dolore, et eum iste magni nisi perspiciatis quas
+            quasi quidem ratione repellendus.</p>
+
+    </div>
+    
+    
+    <!-- nav HTML / CSS -->
+    <script src="js/nav.js"></script>  
+    <!-- local JQ for debugging --
+    <script src="js/jquery-1.12.4.js"></script> -->
+    <!-- CDN JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    
+    
+    <!-- JQuery scripts -->
+    
+    <!-- stopping the self-nav link from working,
+        alert instead -->
+    <script>
+        
+        $link = $("#JQ2link");
+        
+        $link.on("click", function(event) {
+                        
+            // prevent moving to the linked page
+            event.preventDefault();
+            
+            var href = $link.attr("href");
+            alert("Tried to move to link: " + href);
+            
+        });
+        
+    </script>
+    
+    <!-- hiding paragraphs -->
+    <script>
+        
+        $(function(){
+            
+            $("p").click(function() {
+                $piilotettava = $(this);
+                $piilotettava.toggleClass("hidden");
+            });
+
+            $headers = $("p").prev("h2");
+
+            /*
+            // hide following first p 
+            $headers.on("click", function() {
+                $headers.next("p").toggleClass("hidden");
+            }); */
+
+            
+            // hide all following p
+            $headers.on("click", function() {
+                                
+                if ($(this).get(0).nextElementSibling.tagName !== "H2") {
+
+                    var next = $(this).get(0).nextElementSibling;
+
+                    do {
+
+                        $(next).toggleClass("hidden");
+
+                        next = next.nextElementSibling;
+
+                    } while (next.tagName !== "H2");
+
+                } 
+            });
+            
+        })
+            
+    </script>
+    
+</body>
+</html>

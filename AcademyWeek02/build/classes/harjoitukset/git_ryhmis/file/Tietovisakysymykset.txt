@@ -1,0 +1,14 @@
+Onko hauki kala?,Kylla,Ei,Ehka,0
+Onko ahven kala?,Ei,Ehka,Kylla,2
+Monella i-kirjaimell‰ S(x m‰‰r‰ i:t‰)ri:n nimi kirjoitetaan?,1 i-kirjain,2 i-kirjainta,3 i-kirjainta,1
+Montako oppilasta Academyssa on?,10011 oppilasta,10100 oppilasta,21 oppilasta,1
+Onko tama kivaa?,Joooo!,Tietenkin!,Ehdottomasti :),0
+Mika pikakomento kaytetaan tiedostojen kopioimiseen?,Ctrl+V,Ctrl+C,Ctrl+X,1
+Mika pikakomento kaytetaan tiedostojen liittamiseen?,Ctrl+V,Ctrl+C,Ctrl+X,0
+Mika pikakomento kaytetaan tiedostojen leikkaamiseen?,Ctrl+V,Ctrl+C,Ctrl+X,2
+Mika on Suomen yksi saamelaisenemmistoinen kunta?,Pelkosenniemi,Inari,Utsjoki,2
+Mika on leuku?,Lappelainen puukko,Lappelainen muki,Poronheittajien lasso,0
+Montako aistia on kissalla?,Yhdeksan,Viisi,Nelja,1
+Kuuluuko Suomi Skandinaviaan?,Ei virallisesti,On kuulunut vuodesta 1950,On kuulunut vuodesta 1995,0
+Mita on kapakala?,Paistettua kalaa,Keitettya kalaa,Kuivattua kalaa,2
+Milta tuntui kun sai tietovisan toimimaan?,Voitolta!,Aivan mahtavalta :),Ei miltaan,0

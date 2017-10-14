@@ -1,0 +1,7 @@
+.eka {color:dodgerblue;}
+h2.red {color:red;}
+.green {color:forestgreen;}
+#end {font-style:italic;}
+h2 + p {font-style:italic; color:burlywood}
+
+p:first-child, h1, h2 {background-color:antiquewhite; color:darkslategray}

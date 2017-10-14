@@ -3,7 +3,6 @@ package harjoitukset;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.*;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class LocalDates {
