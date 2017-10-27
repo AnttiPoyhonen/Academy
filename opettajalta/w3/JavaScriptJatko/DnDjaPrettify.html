@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prettyprint</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <!--<link rel="stylesheet" href="css/sonsofobsidian.css"/>-->
+    <style>
+        pre.prettyprint {
+            width: 90%;
+            overflow-x: auto;
+            padding: 0.2em;
+        }
+    </style>
+</head>
+<body ondrop="drop(event)" ondragover="allowDrop(event)">
+<h1>Lisää tiedot alle</h1>
+<div id="koodit">
+    <h3>Esimerkki.java</h3>
+<pre class="prettyprint" id="koodilohko">
+class Demo {
+  public static void main(String[] args) {
+    new Demo().testme();
+  }
+
+  public void testme(){
+    int a=10, b=20;
+    print(a);
+  }
+
+  public void print(int a){
+	int c = b/a;
+	System.out.println(c);
+  }
+}
+</pre>
+</div>
+<script>
+    var koodidiv = document.getElementById("koodit");
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        var files = ev.dataTransfer.files;
+        while(koodidiv.firstChild)
+            koodidiv.removeChild(koodidiv.firstChild);
+        for (var i = 0; i < files.length; i++) {
+                kasitteletiedosto(files[i]);
+        }
+    }
+
+    function kasitteletiedosto(file) {
+        var filename = file.name;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var text = reader.result;
+            lisaakoodi(text, filename);
+        }
+        reader.readAsText(file, "utf-8");
+    }
+
+    function lisaakoodi(teksti, nimi) {
+        var elementti = luo_pre_elementti(nimi);
+        elementti.innerText = teksti;
+        // pyydä nätistäjää nätistämään taas. Ensin poista vanhentunut tieto että
+        //elementti.classList.remove("prettified");
+        PR.prettyPrint();
+    }
+    function luo_pre_elementti(nimi) {
+        var otsikko = document.createElement("h3");
+        otsikko.innerText = nimi;
+        var preelem = document.createElement("pre");
+        preelem.className = "prettyprint";
+        koodidiv.appendChild(otsikko);
+        koodidiv.appendChild(preelem);
+        return preelem;
+    }
+</script>
+
+</body>
+</html>

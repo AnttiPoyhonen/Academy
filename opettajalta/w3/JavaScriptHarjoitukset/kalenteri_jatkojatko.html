@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fancy kalenteri</title>
+    <link rel="stylesheet" href="css/jatkokalenteri.css">
+</head>
+<body>
+<h1>Kalenteri <span id="otsikkovuosi"></span></h1>
+<form action="javascript:paivita_sivu();">
+    Anna vuosi: <input type="number" id="form.vuosi"/> <input type="button" id="form.button" value="Näytä">
+    <select id="form.kieli" onchange="paivita_kieli();"><option value="fi">suomi</option><option value="en">englanti</option><option value="sv">ruotsi</option><option value="de">saksa</option></select>
+</form>
+<div id="kalenteri"></div>
+<script src="js/kalenteri_jatkojatko.js"></script>
+<script>
+    alusta_sivu();
+    paivita_sivu();
+</script>
+</body>
+</html>

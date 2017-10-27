@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Henkilöt XHR avulla</title>
+</head>
+<body>
+<h1>XHR Harjoitus</h1>
+<ol id="tiedot"></ol>
+
+<script>
+    var htmllista = document.getElementById("tiedot");
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        console.log("Ready state vaihtunut arvoon: " + req.readyState);
+        if(req.readyState === 4) {
+            var taulukko = JSON.parse(req.responseText);
+            console.dir(taulukko);
+            for(var i = 0 ; i < taulukko.length ; ++i) {
+                console.log(taulukko[i].name);
+                htmllista.innerHTML += "<li>" + taulukko[i].name;
+//                var li_elem = document.createElement("li");
+//                htmllista.appendChild(li_elem);
+//                var hlo_olio = taulukko[i];
+//                for(var prop_nimi in hlo_olio) {
+//                    var kentta = prop_nimi + "=" + hlo_olio[prop_nimi] + "  ";
+//                    var tekstinode = document.createTextNode(kentta)
+//                    li_elem.appendChild(tekstinode);
+//                }
+            }
+        }
+    }
+    req.open('get', 'http://localhost:3000/api/personnel', true);
+    req.send();
+</script>
+
+</body>
+</html>

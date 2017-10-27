@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laskin - harjoitus</title>
+    <style>
+        input[type="number"] { width: 6em;}
+        output { margin-left: 1em; font-weight: bolder;}
+    </style>
+</head>
+<body>
+<h1>Laskin</h1>
+<form>
+    <input type="number" id="nro1" value="0"/> +
+    <input type="number" id="nro2" value="0"/>
+    <input type="button" onclick="laske(event);" value="="/>
+    <output id="tulos"></output>
+</form>
+
+<script>
+    var kentta1 = document.getElementById("nro1");
+    var kentta2 = document.getElementById("nro2");
+    var tuloskentta = document.getElementById("tulos");
+    function laske(event) {
+        var nappi = event.target;
+        var nr1 = parseFloat(kentta1.value);
+        var nr2 = parseFloat(kentta2.value);
+        tuloskentta.value = nr1 + nr2;
+    }
+</script>
+</body>
+</html>
