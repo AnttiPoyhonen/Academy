@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laskin</title>
+</head>
+<body>
+<h1>Laskin</h1>
+<form method='POST' action="LomakeTulostajaServlet">
+    <p>Luku1: <input name='eka' value='4'></p>
+    <p>Luku2: <input name='toka' value='0'></p>
+    <p><select name='operaatio'>
+        <option value='+'>+</option>
+        <option value='-'>-</option>
+        <option value='*' selected>*</option>
+        <option value='/'>/</option>
+    </select></p>
+    <input type='submit' value='Laske'>
+</form>
+<hr/>
+
+<h1>Kaupunkiloma</h1>
+<form method='POST' action="LomakeTulostajaServlet">
+    <p>Lomakohde
+        <select name="kaupunki" multiple="multiple">
+            <option value="Espoo">Esbo</option>
+            <option value="Helsinki">Helsingfors</option>
+            <option value="Turku">Åbo</option>
+            <option value="Vantaa">Vanda</option>
+        </select>
+    </p>
+    <p> Aika: <input type="date" name="paiva"></p>
+    <p><input type="hidden" name="piilo" value="piilossa"></p>
+    <p> Aika: <input type="text" ></p>
+    <input type="submit">
+</form>
+</body>
+</html>
