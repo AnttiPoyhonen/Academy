@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tarjouspyyntö</title>
+</head>
+<body>
+<div id="astia">
+  <main>
+    <h1>Tarjouspyyntö - HTML-harjoitus</h1>
+    <form action="LomakeTulostajaServlet" method="post">
+      <p>
+        Nimi: <input type="text" name="nimi" required="required"/>
+      </p>
+      <p>
+        Asiakastyyppi:<br>
+        <input type="radio" name="asiakastyyppi" value="yritys" checked="checked" id="radio_yritys"/> <label for="radio_yritys">Yritys</label> <br/>
+        <input type="radio" name="asiakastyyppi" value="yksityinen" id="radio_yksityinen"/> <label for="radio_yksityinen">Yksityinen</label>
+      </p>
+      <p>
+        Sähköpostiosoite: <input type="email" name="email">
+      </p>
+      <p>
+        Työn kiireellisyys:
+        <select name="kiireellisyys">
+          <option>Pikatyö</option>
+          <option>Viikko</option>
+          <option>Kaksi viikkoa</option>
+          <option selected="selected">Kuukausi</option>
+          <option>Enemmän</option>
+        </select>
+      </p>
+      <p>
+        Kuvaus tarpeesta:<br>
+        <textarea name="tarvekuvaus" rows="5" cols="60"></textarea>
+      </p>
+      <p>
+        <input type="submit" value="Lähetä"/>&nbsp;
+        <input type="reset" value="Alkuarvot"/>
+      </p>
+    </form>
+      <p></p>
+      <hr/>
+      <p style="margin-top: 20em;"></p>
+    <form action="http://localhost:3000/formhandler" method="post">
+        <fieldset>
+            <legend>Lomake 2</legend>
+            <p><label for="form2.nimi">Nimi</label> <input type="text" id="form2.nimi" name="nimi"/></p>
+            <p><label for="form2.salasana">Salasana</label> <input type="password" id="form2.salasana" name="salasana"/></p>
+            <p><label for="form2.syntymaaika">Syntymäaika</label> <input type="date" id="form2.syntymaaika" name="syntymaaika" value="1970-01-01"/></p>
+            <p><label for="form2.email">Sähköposti</label> <input type="email" id="form2.email" name="email"/></p>
+            <p><label for="form2.vari">Lempiväri</label> <input type="color" value="#ff0000" id="form2.vari" name="vari"/></p>
+            <p>
+                Päivä PP KK VVVV <input type="number" value="1"  min="1" max="31" id="form2.paiva" name="paiva"/>
+                <input list="form2.list.kuukaudet" type="number" id="form2.kuukausi" name="kuukausi"/>
+                <input type="number" value="1970" id="form2.vuosi" name="vuosi"/>
+            </p>
+            <p><label for="form2.erillinenkuukausi">Kuukausikenttä</label> <input type="month" id="form2.erillinenkuukausi" name="erillinenkuukausi"/></p>
+
+            <p><input type="submit" name="btn" value="Eka"/> <input type="submit" name="btn" value="Toka"/>
+            <input type="reset" value="Alkuarvot"/></p>
+        </fieldset>
+        <datalist id="form2.list.kuukaudet">
+            <option value="1">tammi</option>
+            <option value="2">helmi</option>
+            <option value="3">maalis</option>
+            <option value="4">huhti</option>
+            <option value="5">touko</option>
+            <option value="6">kesä</option>
+            <option value="7">heinä</option>
+            <option value="8">elo</option>
+            <option value="9">syys</option>
+            <option value="10">loka</option>
+            <option value="11">marras</option>
+            <option value="12">joulu</option>
+        </datalist>
+    </form>
+  </main>
+  <footer>
+    <hr>
+    <p>
+        <i>Copyright &copy; 2017 E-kirjaamo Oy</i>
+    </p>
+  </footer>
+</div>
+
+</body>
+</html>
