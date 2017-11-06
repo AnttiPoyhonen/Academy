@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/">
+    <Resource name="world" auth="Container" type="javax.sql.DataSource"
+              maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+              username="point" password="f4nt4stic" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/world"/>
+</Context>
