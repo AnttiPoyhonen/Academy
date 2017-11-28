@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head xmlns="http://www.w3.org/1999/html">
+
+    <title>Spring REST testing - users</title>
+
+    <meta charset="UTF-8"/>
+
+    <style>
+
+        body {
+            background-image: url(img/rest.jpg);
+            background-size: cover;
+            padding: 5%;
+        }
+
+        #content {
+            width: 500px;
+            heigth: 400px;
+            padding: 2%;
+            background-color: rgba(248, 248, 255, 0.8);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="content">
+
+    <h1>USERS, Rest testing</h1>
+
+    <p style="font-size: 150%;">Link to <a href="users.html">users</a></p>
+    <p style="font-size: 150%;">Link to <a href="/countries">countries</a></p>
+    <p style="font-size: 150%;">Link to <a href="/countries/pages">countries paged</a></p>
+    <p style="font-size: 150%;">Link to <a href="/countries/maxpopulation">top 10 countries</a> by population</p>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <p style="font-size: 150%;">Link to <a href="/user/all">all users</a> in JSON</p>
+
+    <form style="width: 90%;" action="/user/contains" method="GET">
+        <fieldset>
+
+            <legend>Find users by search string in name or email</legend>
+
+            <table>
+                <tr>
+                    <td><label for="searchstring">Name or email: </label></td>
+                    <td><input type="text" id="searchstring" name="s" placeholder="Enter the search string"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Search for the user"/><span>   </span><input type="reset" value="Reset fields"/></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <form style="width: 90%;" action="/user/add" method="GET">
+        <fieldset>
+
+            <legend>Insert a new user</legend>
+
+            <table>
+                <tr>
+                    <td><label for="insertname">Name: </label></td>
+                    <td><input type="text" id="insertname" name="name" placeholder="Enter name"/></td>
+                </tr>
+                <tr>
+                    <td><label for="insertemail">Email: </label></td>
+                    <td><input type="email" id="insertemail" name="email" placeholder="Enter email"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Add the user"/><span>   </span><input type="reset" value="Reset fields"/></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <form style="width: 90%;" action="/user/update" method="POST">
+        <fieldset>
+
+            <legend>Update a user</legend>
+
+            <table>
+                <tr>
+                    <td><label for="updateid">User ID: </label></td>
+                    <td><input type="text" id="updateid" name="id" placeholder="Enter ID #"/></td>
+                </tr>
+                <tr>
+                    <td><label for="updatename">Name: </label></td>
+                    <td><input type="text" id="updatename" name="name" placeholder="Enter name"/></td>
+                </tr>
+                <tr>
+                    <td><label for="updateemail">Email: </label></td>
+                    <td><input type="email" id="updateemail" name="email" placeholder="Enter email"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Update the user"/><span>   </span><input type="reset" value="Reset fields"/></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <form style="width: 90%;" action="/user/delete" method="POST">
+        <fieldset>
+
+            <legend>Delete a user</legend>
+
+            <table>
+                <tr>
+                    <td><label for="deleteid">User ID: </label></td>
+                    <td><input type="text" id="deleteid" name="id" placeholder="Enter ID #"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Delete the user"/><span>   </span><input type="reset" value="Reset fields"/></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+</div>
+
+</body>
+
+</html>

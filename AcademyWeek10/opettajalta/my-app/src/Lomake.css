@@ -1,0 +1,17 @@
+
+.lomakeosa{
+    text-align: left;
+    margin-left: 1em;
+}
+
+.form-horizontal {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.form-horizontal .form-group {
+    margin-left: 1em;
+}
+.form-horizontal .form-group label {
+    text-align: left;
+}

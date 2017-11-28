@@ -1,0 +1,49 @@
+/*  */
+/* pagination link styling */
+.pagination { display: inline-block; }
+
+.paginationlink {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    /* hover transition of 0.3s */
+    transition: background-color .3s;
+}
+
+/* active page (.active) recoloring */
+.active {
+    background-color: darkgreen;
+    color: antiquewhite;
+}
+
+/* link background when hovering over and not .active */
+.paginationlink:hover:not(.active) {
+    background-color: #808080; /* darker grey */
+}
+
+/* borders, rounded corners */ /*
+.paginationlink {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.paginationlink.active {
+    border-radius: 5px;
+} */
+
+/* rounded corners to 1st and last button */
+.paginationlink:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.paginationlink:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* pagination size */ /*
+.pagination a {
+    font-size: 22px;
+} */
+
+/* centering, wrap a container around it w/ text-align: center; */
+.center { text-align: center; }

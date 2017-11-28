@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fi" xmlns:th="http://www.thymeleaf.org">
+<head th:include="pala :: head">
+    <title>Otsikko</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+
+<h1>Kielet</h1>
+<table class="table-bordered table-striped">
+    <tr><th>Kieli</th><th>Maa</th><th>Virallinen</th><th>Puhuttu</th></tr>
+    <tr th:each="kieli : ${kielet}">
+        <td th:text="${kieli.language}"></td>
+        <td th:text="${kieli.countryName}"></td>
+        <td th:text="${kieli.official}?'Kyllä':'Ei'"></td>
+        <td th:text="${kieli.percentage}+'%'"></td>
+    </tr>
+</table>
+</body>
+</html>

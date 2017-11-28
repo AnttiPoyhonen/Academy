@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>A consult</title>7
+
+    <style>
+
+        body { background-color: black; }
+
+        .kuva {
+            position: fixed;
+            left: 35%;
+            top: 15%;
+            height: 400px;
+            animation: kuva-spin infinite 10s linear;
+        }
+
+        @keyframes kuva-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .sivuKuva {
+            position: fixed;
+            top: 15%;
+            height: 100px;
+            animation: sivukuva infinite 10s linear;
+        }
+
+        .vasen { left: 5%; }
+        .oikea { right: 5%; }
+
+        @keyframes sivukuva {
+            0% { top: 15%; }
+            5% { top: 15%; }
+            45% { top: 67%; }
+            55% { top: 67%; }
+            95% { top: 15%; }
+            100% { top: 15%; }
+        }
+
+        .nurkkalogo {
+            position: fixed;
+            animation: nurkkalogo infinite 10s linear;
+            height: 80px;
+        }
+
+        .topleft { top: 0%; left: 0%; animation: vasnurkkalogo infinite 5s linear;; }
+        .topright { top: 0%; right: 0%; animation: oiknurkkalogo infinite 5s linear;; }
+        .botleft { bottom: 0%; left: 0%; animation: oiknurkkalogo infinite 5s linear;; }
+        .botright { bottom: 0%; right: 0%; animation: vasnurkkalogo infinite 5s linear;; }
+
+        @keyframes oiknurkkalogo {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes vasnurkkalogo {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="content">
+
+    <img class="kuva" src="./consult.jpg" alt="consult!"/>
+    <img class="sivuKuva vasen" src="./consult.jpg" alt="consult!"/>
+    <img class="sivuKuva oikea" src="./consult.jpg" alt="consult!"/>
+    <img class="nurkkalogo topleft" src="./logo.svg" alt="logo"/>
+    <img class="nurkkalogo topright" src="./logo.svg" alt="logo"/>
+    <img class="nurkkalogo botleft" src="./logo.svg" alt="logo"/>
+    <img class="nurkkalogo botright" src="./logo.svg" alt="logo"/>
+
+</div>
+
+
+<!-- nav HTML / CSS -->
+<script src="js/nav.js"></script>
+
+</body>
+</html>

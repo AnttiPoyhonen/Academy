@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Spring REST testing - countries</title>
+
+    <meta charset="UTF-8"/>
+
+    <style>
+
+        body {
+            background-image: url(../img/flag.jpg);
+            background-size: contain;
+            padding: 5%;
+        }
+
+        #left, #right, #header {
+            background-color: rgba(248, 248, 255, 0.8);
+            /* ghostwhite with 30% opacity */
+        }
+
+        #right, #header {
+            padding: 2%;
+        }
+
+        ul li {
+            font-size: 150%
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="css/pagination.css" th:href="@{/css/pagination.css}"/>
+
+</head>
+
+<body>
+
+<div id="content">
+
+    <div id="header">
+
+        <h1>COUNTRIES, Rest testing</h1>
+
+        <p style="font-size: 150%;">Link to <a href="../users.html">users</a></p>
+        <p style="font-size: 150%;">Link to <a href="/countries">countries</a></p>
+        <p style="font-size: 150%;">Link to <a href="/countries/pages">countries paged</a></p>
+        <p style="font-size: 150%;">Link to <a href="/countries/maxpopulation">top 10 countries</a> by population</p>
+
+    </div>
+
+    <div id="left" class="countries" style="width: 55%; float: left;">
+
+        <hr/>
+        <br/>
+
+        <!-- only show if there is a Page-object, add pagination class(es) -->
+        <div th:if="${countrypage != null}" class="pagination center" style="float: none; padding-left: 5%; "
+            th:with="current=${currentIndex},max=${current + 4},min=${current - 4}">
+
+            <!-- previous, current and next pages -->
+            <th:block th:each="i : ${#numbers.sequence( 1, countrypage.totalPages )}">
+
+                <a class="paginationlink" th:with="pageurl=${ '/countries/pages?page=' + i }" th:href="${pageurl}"
+                   th:if=" ${ i lt current } and ${ i ge min }"><span th:text="${i}"></span></a>
+
+                <a class="active paginationlink" th:with="pageurl=${ '/countries/pages?page=' + i }" th:href="${pageurl}"
+                   th:if=" ${ i == current }"><span th:text="${i}"></span></a>
+
+                <a class="paginationlink" th:with="pageurl=${ '/countries/pages?page=' + i }" th:href="${pageurl}"
+                   th:if=" ${ i gt current } and ${ i le max }"><span th:text="${i}"></span></a>
+
+            </th:block>
+
+        </div>
+
+        <p></p>
+        <hr/>
+
+        <div>
+            <ul style="list-style: none;">
+                <th:block th:each=" c : ${countrylist}">
+                    <li class="country"><p>
+                        #<span th:text="${c.getCode()}">CountryCode</span> - <span th:text="${c.getName()}">Name</span>
+                        , Population - <span th:text="${c.getPopulation()}">Population</span><br/>
+                        Head of State - <span th:text="${c.getHeadofstate()}">HoS</span>
+                        , Capital - <span th:text="${c.getCapital().getName()}">CapID</span>
+                    </p></li>
+                </th:block>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div id="right" style="width: 40%; float: right;">
+
+        <form style="width: 90%;" action="/countries/contains" method="GET">
+            <fieldset>
+
+                <legend>Find countries by search string in name or countrycode</legend>
+
+                <table>
+                    <tr>
+                        <td><label for="searchstring">Country Name or Code: </label></td>
+                        <td><input type="text" id="searchstring" name="s" placeholder="Enter the search string"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Search for the Countries"/><span>   </span>
+                            <input type="reset" value="Reset fields"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="/countries">
+                            <button>Reset the list</button>
+                        </a></td>
+                    </tr>
+                </table>
+
+            </fieldset>
+        </form>
+
+        <br/>
+        <hr/>
+        <br/>
+
+        <form style="width: 90%;" action="/countries/update" method="POST">
+            <fieldset>
+
+                <legend>Update a Country by Country Code</legend>
+
+                <table>
+                    <tr>
+                        <td><label for="updateCode">Country Code: </label></td>
+                        <td><input type="text" id="updateCode" name="Code" placeholder="Enter CountryCode"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="updateName">Country Name: </label></td>
+                        <td><input type="text" id="updateName" name="Name" placeholder="Enter Country Name"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="updatePopulation">Country Population: </label></td>
+                        <td><input type="text" id="updatePopulation" name="Population"
+                                   placeholder="Enter Country Population"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="updateHoS">Country Head of State: </label></td>
+                        <td><input type="text" id="updateHoS" name="HeadOfState" placeholder="Enter Head of State"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Update the Country"/><span>   </span>
+                            <input type="reset" value="Reset fields"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </fieldset>
+        </form>
+
+        <br/>
+        <hr/>
+        <br/>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

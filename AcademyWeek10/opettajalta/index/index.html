@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Hello React</title><meta charset="utf-8" />
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/babel">
+    class MyComponent extends React.Component {
+        render (){
+            return(
+                <table>
+                    <thead>
+                    <tr><th>Nimi</th><th>Email</th><th>Ikä</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{this.props.henkilo.nimi}</td>
+                        <td>{this.props.henkilo.email}</td>
+                        <td>{this.props.henkilo.ika}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            );
+        }
+    };
+
+    var Sanonta = function (props) {
+        return (
+            <div>
+                <p>{props.sanonnat[0].sanoja}: {props.sanonnat[0].teksti}</p>
+                <p>{props.sanonnat[1].sanoja}: {props.sanonnat[1].teksti}</p>
+            </div>
+        );
+    };
+//    Sanonta.defaultProps = {sanoja: "trad."};
+
+    var sanontataulukko = [{teksti: "Elämä on", sanoja:"joku"},
+        {teksti:"Toinen sanonta", sanoja: "joku muu"}];
+    var seppo = {nimi: 'Seppo', email: 'sepe@yle.fi', ika: 70};
+    ReactDOM.render(<Sanonta sanonnat={sanontataulukko} />,
+        document.getElementById("content"))
+</script>
+</body>
+</html>

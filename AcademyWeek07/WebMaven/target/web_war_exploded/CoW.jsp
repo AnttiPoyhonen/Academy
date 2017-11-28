@@ -16,20 +16,16 @@ Author: Antti Pöyhönen
 
 <body>
 
-    <sql:setDataSource var = "world" driver = "com.mysql.jdbc.Driver"
-                       url = "jdbc:mysql://localhost:3306/world/"
-                       user = "point"  password = "f4nt4stic"/>
-
-    <sql:query dataSource = "${world}" var = "result">
-        select code, name, population, headofstate from country order by population desc;
-    </sql:query>
-
-
     <p>Back to the <a href='index.jsp'>index</a></p>
 
     <h1>Countries of the World:</h1>
 
     <p>
+
+        <sql:query dataSource = "world" var = "result">
+            <%--select code, name, population, headofstate from country order by population desc;--%>
+        select * from country;
+        </sql:query>
 
         <table border = "1" width = "100%">
             <tr>
@@ -42,10 +38,10 @@ Author: Antti Pöyhönen
             <c:forEach var = "row" items = "${result.rows}">
 
                 <tr>
-                    <td> <c:out value = "${row.code}"/></td>
-                    <td> <c:out value = "${row.name}"/></td>
-                    <td> <c:out value = "${row.population}"/></td>
-                    <td> <c:out value = "${row.headofstate}"/></td>
+                    <td>${row.code}</td>
+                    <td>${row.name}</td>
+                    <td>${row.population}</td>
+                    <td>${row.headofstate}</td>
                 </tr>
 
             </c:forEach>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>React</title>
+
+    <!-- React base -->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+
+    <!-- babel in-browser jsx compile -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+        td {  }
+        .header td { font-weigth: bold; }
+    </style>
+
+</head>
+
+<body id="body" style="font-size: 200%;">
+
+    <div id="content"></div>
+
+    <script type="text/babel">
+
+        class Kayttaja extends React.Component {
+            render() {
+                return(
+                        <table>
+                            <thead>
+                                <tr className="header">
+                                    <td>Nimi</td> <td>Email</td> <td>Ika</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{this.props.hlo.nimi}</td>
+                                    <td>{this.props.hlo.email}</td>
+                                    <td>{this.props.hlo.ika}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                );
+            }
+        };
+
+        const Aforism = (props) => (
+            <p>
+                {props.af.author}<br/> - <i>{props.af.text}</i>
+            </p>
+        );
+
+        var Seppo = {nimi: 'Seppo Hovi', email: 'seppe@yle.fi', ika: 'over 9000!'};
+
+        ReactDOM.render(
+                <Kayttaja hlo={Seppo}/>,
+            document.getElementById("content")
+        )
+
+        var A = {author: 'Antti', text: 'Laajempi näkemys mahdollistaa paremmat ratkaisut!'};
+
+        // a function to create a new lastchild div for "body" to be used for the following rendering
+        function creatediv() {
+            var div = document.createElement("div");
+            var body = document.getElementById("body");
+            body.appendChild(div);
+            return div;
+        }
+
+        var newdiv = creatediv();
+
+        ReactDOM.render(
+            <Aforism af={A}/>, newdiv
+        )
+
+    </script>
+
+    <!-- example styles for JSX/React
+    <script>
+
+        /* long class with function
+        class MyHello extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (<p>Hello {this.props.name}!</p>);
+            }
+        } */
+
+        /* short class with function
+        class MyHello extends React.Component {
+            render() {
+                return (<p>Hello {this.props.name}!</p>);
+            }
+        } */
+
+        /* shortened straight function
+        function MyHello(props) {
+            return (<p>Hello {props.name}!</p>);
+        } */
+
+        /* functional
+        const MyHello = (props) => (<p>Hello {props.name}!</p>); */
+
+        //            const Kayttaja = () => (<p>staattista tekstiä</p>);
+
+    </script>
+    -->
+
+    <!-- babel rendered
+    <script type="text/babel">
+        class MyComponent extends React.Component {
+            render () {
+                return(<h1>My component.</h1>);
+            }
+        }
+        ReactDOM.render(<MyComponent />, content)
+    </script> -->
+
+    <!-- Basic static rendering
+    <script>
+        ReactDOM.render(
+            React.DOM.h1(null, "Hello world!"),
+            document.getElementById("content")
+        );
+    </script> -->
+
+</body>
+
+</html>

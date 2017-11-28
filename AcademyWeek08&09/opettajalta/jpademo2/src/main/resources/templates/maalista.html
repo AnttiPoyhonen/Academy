@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi" xmlns:th="http://www.thymeleaf.org">
+<head th:include="pala :: head">
+    <title>Otsikko</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+
+<h1>Maat</h1>
+<div th:if="${sivuja!=null}">
+    <p class="sivulkm" th:text="|${nykyinen+1} / ${sivuja}|"></p>
+</div>
+<table class="table-bordered table-striped">
+    <tr><th>Koodi</th><th>Nimi</th><th>Paikallinen nimi</th><th>Asukasluku</th><th>Pääkaupunki</th></tr>
+    <tr th:each="maa : ${maat}">
+        <td th:text="${maa.code}"></td>
+        <td th:text="${maa.name}"></td>
+        <td th:text="${maa.localname}"></td>
+        <td th:text="${maa.population}"></td>
+        <td th:text="${maa.capital==null}?'-':${maa.capital.name}"></td>
+    </tr>
+</table>
+<div th:if="${sivuolio!=null}" class="sivutus"
+     th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}">
+    <ul class="pager">
+        <li th:if="${sivuolio.number > 0}" class="previous"><a href="#" th:href="${urlBuilder.replaceQueryParam('page', sivuolio.number-1).toUriString()}">Previous</a></li>
+        <li th:unless="${sivuolio.number >= sivuolio.totalPages-1}" class="next"><a href="#" th:href="${urlBuilder.replaceQueryParam('page', sivuolio.number+1).toUriString()}">Next</a></li>
+    </ul>
+    <ul class="pagination">
+        <li th:each="i : ${#numbers.sequence( 0, sivuolio.totalPages-1)}" th:class="${sivuolio.number==i}?'active'">
+            <a href="#" th:text="${i+1}" th:href="${urlBuilder.replaceQueryParam('page', i).toUriString()}"></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

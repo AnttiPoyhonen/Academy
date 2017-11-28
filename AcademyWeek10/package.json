@@ -1,0 +1,17 @@
+{
+  "name": "AcademyWeek10",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "AP",
+  "contributors": [],
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  }
+}

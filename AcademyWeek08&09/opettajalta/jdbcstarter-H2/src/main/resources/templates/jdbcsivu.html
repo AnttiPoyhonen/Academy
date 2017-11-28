@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Terve H2</title>
+</head>
+<body>
+<h1>Terve, terve</h1>
+<p th:text="'Haettu: ' + ${nimi}" />
+<table>
+    <tr><th>Etunimi</th><th>Sukunimi</th></tr>
+    <tr th:each="asiakas : ${asiakkaat}">
+        <td th:text="${asiakas.firstName}"></td>
+        <td th:text="${asiakas.lastName}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,10 @@
+
+.sivulkm {
+    text-align: center;
+}
+.sivutus,
+table {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
