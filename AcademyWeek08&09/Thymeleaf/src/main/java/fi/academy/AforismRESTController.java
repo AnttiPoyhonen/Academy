@@ -8,12 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/af")
 public class AforismRESTController {
 
     @Autowired
     AforismDAO af;
 
-    @RequestMapping(value = "/af", method = RequestMethod.POST)
+    @GetMapping
+    public @ResponseBody List<Aforism> findAll() {
+        return af.list();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void createAforism(
             @RequestParam(value="text", defaultValue="") String text,
@@ -24,10 +30,10 @@ public class AforismRESTController {
 
     }
 
-    @RequestMapping(value = "/af", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
     public void updateAforism(
-            @RequestParam(value="nr", defaultValue="") String id,
+            @RequestParam(value="id", defaultValue="-1") String id,
             @RequestParam(value="text", defaultValue="") String text,
             @RequestParam(value="author", defaultValue="") String author,
             Model model) {
@@ -36,10 +42,10 @@ public class AforismRESTController {
 
     }
 
-    @RequestMapping(value = "/af", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
     public void deleteAforism(
-            @RequestParam(value="nr", defaultValue="") String id,
+            @RequestParam(value="id", defaultValue= "-1") String id,
             Model model) {
 
         af.deleteAforism(Integer.parseInt(id));

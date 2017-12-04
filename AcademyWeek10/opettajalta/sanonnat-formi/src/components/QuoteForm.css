@@ -1,0 +1,19 @@
+.quoteform {
+    border: 2px solid orange;
+}
+
+.formerrors {
+    color: red;
+}
+
+.form-horizontal {
+    width: 90%;
+    margin: 1em auto 1em 1em;
+}
+
+.form-horizontal .form-group {
+    margin-left: 1em;
+}
+.form-horizontal .form-group label {
+    text-align: left;
+}

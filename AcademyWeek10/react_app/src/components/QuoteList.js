@@ -11,13 +11,16 @@ class QuoteList extends Component {
         // temporary var to link the props to a call inside the mapping afterwards
         // a way to pass the props to the mapping objects as props
         var deleteTemp = this.props.deleteAf;
+        // console.log(deleteTemp);
 
         // Function to transform aforism list to Quote objects (as <li> list items)
-        var list = this.props.aflist.map(function(quote, index) {
-            return (
-                <Quote quote = {quote} deleteAf = {deleteTemp} key = {index}/>
-            )
-        });
+        if (this.props.aflist != null) {
+            var list = this.props.aflist.map(function (quote, index) {
+                return (
+                    <Quote quote={quote} deleteAf={deleteTemp} key={index}/>
+                )
+            });
+        }
 
         // return to format the list itself
         return (

@@ -1,0 +1,42 @@
+/*.quote {*/
+    /*border: 2px solid blue;*/
+/*}*/
+
+.quote {
+    padding: 0.3em;
+    margin: 0.1em 0;
+    list-style-type: none;
+    color: white;
+    border: 3px solid white;
+}
+
+.quote > li {
+    margin-bottom: 0.1em;
+}
+
+.quote a {
+    /*color: #E72533;*/
+    color: yellow;
+}
+
+.dlink {
+    float: right;
+    margin: 0.2em;
+    background-color: #4A90E2;
+}
+
+.quotetext {
+    font-style: italic;
+    font-size: 120%;
+    display: block;
+    background-color: #4A90E2;
+    padding: 0.2em 1em;
+}
+
+.quoteauthor {
+    font-weight: bold;
+    margin-left: 40px;
+    display: inline-block;
+    background-color: #4A90E2;
+    padding: 0.2em;
+}

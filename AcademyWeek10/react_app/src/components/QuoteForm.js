@@ -29,7 +29,6 @@ class QuoteForm extends Component {
         // to render the form
         return (
 
-            <form style={{width: '40%', margin: '0% 5%'}}>
                 <fieldset>
 
                     <legend>Add an Aforism</legend>
@@ -58,7 +57,6 @@ class QuoteForm extends Component {
                         </tbody>
                     </table>
                 </fieldset>
-            </form>
 
         );
     }
